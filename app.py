@@ -45,8 +45,18 @@ st.markdown(
         border-right: 2px solid #8a2be2 !important;
     }
     
-    /* Neon Glow Headers */
-    h1, h2, h3 {
+    /* Main Large Title (h1) Styling */
+    h1 {
+        color: #00f2fe !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 52px !important;  /* Enlarged title size */
+        font-weight: 800 !important;
+        text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+        margin-bottom: 5px !important;
+    }
+
+    /* Subheaders (h2, h3) Styling */
+    h2, h3 {
         color: #00f2fe !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 700 !important;
