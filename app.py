@@ -7,53 +7,64 @@ st.set_page_config(
     page_title="Delivery Time Predictor", page_icon="🚚", layout="wide"
 )
 
-# Custom Red & Black Theme CSS
+# Custom High-Contrast Red & Black Theme CSS
 st.markdown(
     """
     <style>
-    /* Dark theme background */
+    /* Dark background for the whole app */
     .stApp {
-        background-color: #0e0e10;
-        color: #ffffff;
+        background-color: #0e0e10 !important;
+        color: #ffffff !important;
     }
     
-    /* Sidebar Styling */
+    /* Force ALL text, labels, and captions to crisp white */
+    p, span, label, div, li, .stMarkdown {
+        color: #ffffff !important;
+    }
+
+    /* Sidebar background and text */
     [data-testid="stSidebar"] {
-        background-color: #16161a;
-        border-right: 2px solid #e50914;
+        background-color: #16161a !important;
+        border-right: 2px solid #e50914 !important;
+    }
+    [data-testid="stSidebar"] * {
+        color: #ffffff !important;
     }
     
     /* Red Accent Headers */
-    h1, h2, h3 {
+    h1, h2, h3, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
         color: #e50914 !important;
-        font-weight: 700;
+        font-weight: 700 !important;
     }
     
-    /* Custom Card Containers */
+    /* Form Container Card */
     div[data-testid="stForm"] {
-        background-color: #1a1a1e;
-        border: 1px solid #333333;
+        background-color: #1a1a1e !important;
+        border: 1px solid #333333 !important;
         border-radius: 12px;
         padding: 20px;
     }
     
-    /* Red Styled Buttons */
+    /* Input Fields styling - dark background with bright text */
+    input, select, div[role="combobox"] {
+        background-color: #26262c !important;
+        color: #ffffff !important;
+        border-radius: 6px !important;
+    }
+    
+    /* Red Submit Button */
     .stButton>button {
         background-color: #e50914 !important;
-        color: white !important;
+        color: #ffffff !important;
         border-radius: 8px;
         border: none;
         font-weight: bold;
         width: 100%;
-        padding: 10px;
+        padding: 12px;
+        font-size: 16px;
     }
     .stButton>button:hover {
         background-color: #b20710 !important;
-    }
-    
-    /* Input Box Styles */
-    .stNumberInput, .stSelectbox {
-        color: white;
     }
     </style>
 """,
@@ -120,7 +131,5 @@ with st.form("prediction_form"):
 
   submit_btn = st.form_submit_button("Predict Delivery Time")
 
-# --- PREDICTION HANDLING ---
 if submit_btn:
-  # Insert your model loading & inference code here
   st.success("Calculating estimated delivery time...")
