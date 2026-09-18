@@ -49,7 +49,7 @@ st.markdown(
     h1 {
         color: #00f2fe !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 62px !important;  /* Enlarged title size */
+        font-size: 72px !important;  /* Enlarged title size */
         font-weight: 800 !important;
         text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
         margin-bottom: 5px !important;
